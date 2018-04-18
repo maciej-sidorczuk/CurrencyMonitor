@@ -157,9 +157,9 @@ public class CurrencyMonitor {
 			for (int j = 0; j < childNodes.getLength(); j++) {
 				Node itemNode = childNodes.item(j);
 				String currentNode = itemNode.getNodeName();
-				if (currentNode.equals(nodeCurrency)) {
+				if ((currentNode.toLowerCase().trim()).equals(nodeCurrency.toLowerCase().trim())) {
 					currencySymbol = itemNode.getTextContent();
-					if (list.contains(currencySymbol)) {
+					if (list.contains(currencySymbol.toUpperCase())) {
 						isCurrencyToAdd = true;
 					}
 				}
